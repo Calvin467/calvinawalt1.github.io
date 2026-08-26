@@ -1,277 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>glass aquarium · swimming fish</title>
-  <style>
-    /* ---------- global reset ---------- */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calvin · disclaimer & security</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    html, body {
-      width: 100%;
-      min-height: 100vh;
-      overflow: hidden; /* prevent scrollbars from fish moving off-screen */
-    }
+        body {
+            background: #f8f6f0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            padding: 1.5rem;
+            line-height: 1.5;
+        }
 
-    body {
-      /* 
-        ultra‑translucent blue – like clear glass with a faint cobalt tint.
-        alpha = 0.12  →  only a whisper of blue, very transparent.
-        the white background of the browser shines through, giving 
-        a crisp, airy, glass‑like feel.
-      */
-      background-color: rgba(40, 90, 220, 0.12);
+        .disclaimer-card {
+            max-width: 860px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.02);
+            padding: 3rem 3.5rem;
+            transition: all 0.2s ease;
+            border: 1px solid #edeae2;
+        }
 
-      /* position context for the fish */
-      position: relative;
-    }
+        .disclaimer-card {
+            background-image: radial-gradient(circle at 10% 20%, rgba(200, 180, 150, 0.02) 0%, transparent 60%);
+        }
 
-    /* ---- fish container: covers the whole viewport ---- */
-    #aquarium {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      pointer-events: none; /* so you can click "through" if needed */
-      z-index: 1;
-    }
+        .mark {
+            display: inline-block;
+            font-size: 0.9rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: #b7aa92;
+            border-bottom: 2px solid #edeae2;
+            padding-bottom: 0.35rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
 
-    /* ---- each fish is a simple SVG shape ---- */
-    .fish {
-      position: absolute;
-      width: 60px;
-      height: 30px;
-      will-change: transform;
-      animation: swim linear infinite;
-      /* each fish will have its own duration & delay via inline style */
-    }
+        h1 {
+            font-size: 3.2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #1e1c19;
+            margin-bottom: 0.35rem;
+            line-height: 1.1;
+        }
 
-    /* fish body (SVG) – we use inline SVG for crisp rendering */
-    .fish svg {
-      display: block;
-      width: 100%;
-      height: 100%;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
-    }
+        .subhead {
+            font-size: 1.1rem;
+            color: #5e5546;
+            border-left: 4px solid #d9d0c0;
+            padding-left: 1.2rem;
+            margin-top: 0.25rem;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
 
-    /* 
-      swimming animation: moves fish from right to left across the screen,
-      with a gentle vertical bob to mimic real swimming.
-    */
-    @keyframes swim {
-      0% {
-        transform: translateX(110vw) translateY(0) scaleX(1);
-        opacity: 0.7;
-      }
-      10% {
-        opacity: 1;
-      }
-      90% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateX(-20vw) translateY(40px) scaleX(1);
-        opacity: 0.5;
-      }
-    }
+        .disclaimer-body {
+            font-size: 1.2rem;
+            color: #2b2824;
+            background: #fcfaf7;
+            padding: 1.8rem 2rem;
+            border-radius: 20px;
+            border: 1px solid #f0ebe2;
+            box-shadow: inset 0 1px 4px rgba(255, 255, 255, 0.8);
+        }
 
-    /* some fish swim the other way – we add a class for that */
-    .fish.flip {
-      animation-name: swim-reverse;
-    }
+        .disclaimer-body p {
+            margin-bottom: 1.2rem;
+        }
 
-    @keyframes swim-reverse {
-      0% {
-        transform: translateX(-20vw) translateY(0) scaleX(-1);
-        opacity: 0.7;
-      }
-      10% {
-        opacity: 1;
-      }
-      90% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateX(110vw) translateY(30px) scaleX(-1);
-        opacity: 0.5;
-      }
-    }
+        .disclaimer-body p:last-of-type {
+            margin-bottom: 0;
+        }
 
-    /* small fish variation */
-    .fish.small {
-      width: 36px;
-      height: 18px;
-    }
-    .fish.tiny {
-      width: 24px;
-      height: 12px;
-    }
-    .fish.large {
-      width: 80px;
-      height: 40px;
-    }
+        .disclaimer-body strong {
+            color: #1e1c19;
+            font-weight: 600;
+        }
 
-    /* subtle bubble effect – optional, but adds to the aquarium feel */
-    .bubble {
-      position: absolute;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.15);
-      box-shadow: inset 0 0 6px rgba(255,255,255,0.3);
-      animation: floatUp linear infinite;
-      pointer-events: none;
-    }
+        /* additional security block */
+        .security-notice {
+            margin-top: 1.8rem;
+            background: #f2efe9;
+            border-radius: 16px;
+            padding: 1.2rem 1.8rem;
+            border-left: 5px solid #8f7e66;
+            font-size: 1.05rem;
+            color: #1f1c18;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.7);
+        }
 
-    @keyframes floatUp {
-      0% {
-        transform: translateY(100vh) scale(0.6);
-        opacity: 0;
-      }
-      20% {
-        opacity: 0.6;
-      }
-      80% {
-        opacity: 0.4;
-      }
-      100% {
-        transform: translateY(-10vh) scale(1.2);
-        opacity: 0;
-      }
-    }
-  </style>
+        .security-notice .icon {
+            font-size: 1.5rem;
+            line-height: 1.2;
+            opacity: 0.8;
+        }
+
+        .security-notice .text {
+            flex: 1;
+        }
+
+        .security-notice .text strong {
+            color: #231f1a;
+        }
+
+        .security-notice .text .macroaxis {
+            font-weight: 600;
+            color: #4f3f2c;
+            letter-spacing: 0.02em;
+            background: #e3dcd0;
+            padding: 0.1rem 0.6rem;
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 0.95rem;
+        }
+
+        .signature-line {
+            margin-top: 2.2rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            justify-content: space-between;
+            border-top: 1px solid #e4ddd2;
+            padding-top: 1.8rem;
+            font-size: 0.95rem;
+            color: #6b6256;
+        }
+
+        .signature-line span:first-child {
+            letter-spacing: 0.02em;
+        }
+
+        .signature-line .calvin-mark {
+            font-weight: 500;
+            color: #2b2824;
+            background: #f0ebe2;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+        }
+
+        /* responsive */
+        @media (max-width: 600px) {
+            .disclaimer-card {
+                padding: 2rem 1.5rem;
+                border-radius: 20px;
+            }
+
+            h1 {
+                font-size: 2.4rem;
+            }
+
+            .subhead {
+                font-size: 1rem;
+                padding-left: 0.8rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .disclaimer-body {
+                font-size: 1rem;
+                padding: 1.2rem 1.2rem;
+            }
+
+            .security-notice {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 1rem 1.2rem;
+                font-size: 0.95rem;
+            }
+
+            .security-notice .icon {
+                font-size: 1.3rem;
+            }
+
+            .signature-line {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.75rem;
+            }
+
+            .mark {
+                font-size: 0.75rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .disclaimer-body {
+                font-size: 0.95rem;
+                padding: 1rem;
+            }
+            .disclaimer-card {
+                padding: 1.5rem 1rem;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0.5in;
+            }
+            .disclaimer-card {
+                box-shadow: none;
+                border: 1px solid #ccc;
+                padding: 1.5rem 2rem;
+            }
+            .signature-line {
+                border-top-color: #aaa;
+            }
+            .security-notice {
+                background: #f3f0eb;
+                border-left-color: #7f6e58;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- the aquarium layer – holds all fish and bubbles -->
-  <div id="aquarium"></div>
+    <div class="disclaimer-card">
+        <div class="mark">⏤ public notice · legal ⏤</div>
+        
+        <h1>Calvin</h1>
+        <div class="subhead">not responsible for any of your financial losses</div>
 
-  <script>
-    (function() {
-      const aquarium = document.getElementById('aquarium');
+        <div class="disclaimer-body">
+            <p>
+                <strong>Calvin</strong> never took anybody’s money and invested it on their behalf.
+                Any resemblance to investment advice, portfolio strategies, or market predictions 
+                is purely coincidental and entirely unintentional.
+            </p>
+            <p>
+                If you copied this portfolio — whether from a screenshot, a conversation, 
+                a late-night hunch, or a misinterpreted meme — it is <strong>your own fault</strong>.
+                Calvin does not endorse, recommend, or validate any trading decisions, 
+                asset allocations, or financial moves that you choose to make.
+            </p>
+            <p style="font-size: 0.95rem; color: #5e5546; margin-top: 0.4rem; border-top: 1px dashed #e0d8cc; padding-top: 1rem;">
+                ⚡ This is not financial advice. This is a disclaimer. 
+                Read it twice. Then read it again.
+            </p>
+        </div>
 
-      // ----- helper: random float between min & max -----
-      const rand = (min, max) => Math.random() * (max - min) + min;
+        <!--  ADDED: theft & Macroaxis notice  -->
+        <div class="security-notice">
+            <span class="icon">🛡️</span>
+            <span class="text">
+                <strong>Any theft of this information is a crime.</strong> 
+                Unauthorised reproduction, distribution, or commercial use is prohibited.
+                <span style="display: inline-block; margin-top: 0.3rem;">
+                    <span class="macroaxis">Macroaxis</span> will likely catch whoever is trying to steal this information — 
+                    their systems actively monitor and track unauthorised access and misuse.
+                </span>
+            </span>
+        </div>
 
-      // ----- generate a fish SVG string with a specific color -----
-      function createFishSVG(color, tailColor) {
-        // color = main body, tailColor = tail fin (slightly different)
-        return `
-          <svg viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg">
-            <!-- tail fin -->
-            <polygon points="0,15 12,4 12,26" fill="${tailColor}" opacity="0.9"/>
-            <!-- body (elliptical) -->
-            <ellipse cx="30" cy="15" rx="24" ry="12" fill="${color}" />
-            <!-- eye -->
-            <circle cx="40" cy="12" r="3" fill="white" />
-            <circle cx="41" cy="11.5" r="1.5" fill="#1a2a3a" />
-            <!-- dorsal fin -->
-            <polygon points="26,3 34,3 32,10 28,10" fill="${tailColor}" opacity="0.7"/>
-            <!-- pectoral fin -->
-            <polygon points="32,22 38,26 34,26" fill="${tailColor}" opacity="0.6"/>
-          </svg>
-        `;
-      }
-
-      // ----- color palette for fish (translucent, glassy tones) -----
-      const colors = [
-        { body: 'rgba(255, 120, 80, 0.7)', tail: 'rgba(220, 80, 40, 0.8)' },    // orange
-        { body: 'rgba(255, 200, 60, 0.7)', tail: 'rgba(220, 160, 30, 0.8)' },  // golden
-        { body: 'rgba(60, 180, 220, 0.7)', tail: 'rgba(30, 130, 180, 0.8)' },  // blue
-        { body: 'rgba(220, 80, 160, 0.7)', tail: 'rgba(180, 50, 120, 0.8)' },  // pink
-        { body: 'rgba(100, 220, 140, 0.7)', tail: 'rgba(60, 180, 100, 0.8)' }, // mint
-        { body: 'rgba(200, 130, 240, 0.7)', tail: 'rgba(150, 80, 200, 0.8)' }, // lavender
-      ];
-
-      // ----- create a fish element with random properties -----
-      function createFish() {
-        const fish = document.createElement('div');
-        fish.className = 'fish';
-
-        // random size class
-        const sizeRand = Math.random();
-        if (sizeRand < 0.3) fish.classList.add('small');
-        else if (sizeRand < 0.6) fish.classList.add('tiny');
-        else if (sizeRand > 0.9) fish.classList.add('large');
-        // else default medium (60x30)
-
-        // random color
-        const colorPair = colors[Math.floor(Math.random() * colors.length)];
-        const svgString = createFishSVG(colorPair.body, colorPair.tail);
-        fish.innerHTML = svgString;
-
-        // random vertical position (y) – 10% to 90% of viewport
-        const yPos = rand(5, 90);
-        fish.style.top = yPos + '%';
-
-        // random animation duration (between 8 and 22 seconds)
-        const duration = rand(10, 24);
-        fish.style.animationDuration = duration + 's';
-
-        // random delay (0 to 12s) to spread them out
-        const delay = rand(0, 14);
-        fish.style.animationDelay = delay + 's';
-
-        // 40% chance to swim right-to-left (flip class)
-        if (Math.random() < 0.4) {
-          fish.classList.add('flip');
-        }
-
-        // random horizontal starting offset (so they don't all start at the same edge)
-        // we set a random translateX via inline style – but the animation will override.
-        // instead we add a small variation using a custom property or just rely on delay.
-        // we can also add a slight vertical offset variation by using a custom animation
-        // but we keep it simple.
-
-        // store a reference to the fish for potential later use
-        return fish;
-      }
-
-      // ----- create bubbles (tiny glass spheres) -----
-      function createBubble() {
-        const bubble = document.createElement('div');
-        bubble.className = 'bubble';
-        const size = rand(4, 14);
-        bubble.style.width = size + 'px';
-        bubble.style.height = size + 'px';
-        bubble.style.left = rand(0, 95) + '%';
-        bubble.style.animationDuration = rand(12, 28) + 's';
-        bubble.style.animationDelay = rand(0, 20) + 's';
-        bubble.style.opacity = rand(0.1, 0.35);
-        return bubble;
-      }
-
-      // ----- populate the aquarium -----
-      const fishCount = 14;        // enough to look lively but not crowded
-      const bubbleCount = 22;
-
-      for (let i = 0; i < fishCount; i++) {
-        aquarium.appendChild(createFish());
-      }
-
-      for (let i = 0; i < bubbleCount; i++) {
-        aquarium.appendChild(createBubble());
-      }
-
-      // (optional) add a few extra fish after a short delay to make it dynamic
-      setTimeout(() => {
-        for (let i = 0; i < 4; i++) {
-          const f = createFish();
-          // give them a shorter animation to appear "new"
-          f.style.animationDuration = rand(8, 16) + 's';
-          f.style.animationDelay = '0s';
-          aquarium.appendChild(f);
-        }
-      }, 3000);
-
-      // ----- small trick: on resize, we don't need to do anything,
-      // since fish use % and vw/vh – they adapt automatically.
-    })();
-  </script>
-
-  <!-- no text, no extra content – just the glassy aquarium with fish -->
+        <div class="signature-line">
+            <span>© Calvin · <span style="font-style: italic;">caveat emptor</span></span>
+            <span class="calvin-mark">✧  you are on your own  ✧</span>
+        </div>
+    </div>
 </body>
 </html>
