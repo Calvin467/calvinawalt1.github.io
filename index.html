@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calvin · disclaimer & security</title>
+    <title>Calvin · disclaimer & property</title>
     <style>
         * {
             margin: 0;
@@ -23,7 +23,7 @@
         }
 
         .disclaimer-card {
-            max-width: 860px;
+            max-width: 880px;
             width: 100%;
             background: #ffffff;
             border-radius: 28px;
@@ -91,7 +91,7 @@
             font-weight: 600;
         }
 
-        /* additional security block */
+        /* security notice */
         .security-notice {
             margin-top: 1.8rem;
             background: #f2efe9;
@@ -129,6 +129,56 @@
             border-radius: 20px;
             display: inline-block;
             font-size: 0.95rem;
+        }
+
+        /* NEW: property disclaimer block (2026–2055) */
+        .property-disclaimer {
+            margin-top: 1.5rem;
+            background: #eae5db;
+            border-radius: 16px;
+            padding: 1.2rem 1.8rem;
+            border-left: 5px solid #6b5d4a;
+            font-size: 1.05rem;
+            color: #1f1c18;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.5);
+        }
+
+        .property-disclaimer .icon {
+            font-size: 1.4rem;
+            line-height: 1.2;
+            opacity: 0.8;
+        }
+
+        .property-disclaimer .text {
+            flex: 1;
+        }
+
+        .property-disclaimer .text strong {
+            color: #1f1a13;
+        }
+
+        .property-disclaimer .text .calvin-awalt {
+            font-weight: 700;
+            color: #2d2419;
+            letter-spacing: 0.02em;
+            background: #d6cdbb;
+            padding: 0.1rem 0.8rem;
+            border-radius: 30px;
+            display: inline-block;
+            font-size: 0.95rem;
+        }
+
+        .property-disclaimer .text .years {
+            font-weight: 600;
+            color: #3f3222;
+            background: #ddd4c2;
+            padding: 0.05rem 0.6rem;
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 0.9rem;
         }
 
         .signature-line {
@@ -178,14 +228,16 @@
                 padding: 1.2rem 1.2rem;
             }
 
-            .security-notice {
+            .security-notice,
+            .property-disclaimer {
                 flex-direction: column;
                 align-items: flex-start;
                 padding: 1rem 1.2rem;
                 font-size: 0.95rem;
             }
 
-            .security-notice .icon {
+            .security-notice .icon,
+            .property-disclaimer .icon {
                 font-size: 1.3rem;
             }
 
@@ -230,6 +282,10 @@
                 background: #f3f0eb;
                 border-left-color: #7f6e58;
             }
+            .property-disclaimer {
+                background: #e8e2d6;
+                border-left-color: #5f5340;
+            }
         }
     </style>
 </head>
@@ -258,7 +314,7 @@
             </p>
         </div>
 
-        <!--  ADDED: theft & Macroaxis notice  -->
+        <!-- theft & Macroaxis notice -->
         <div class="security-notice">
             <span class="icon">🛡️</span>
             <span class="text">
@@ -271,8 +327,25 @@
             </span>
         </div>
 
+        <!--  NEW: property of Calvin Awalt · 2026–2055  -->
+        <div class="property-disclaimer">
+            <span class="icon">⚖️</span>
+            <span class="text">
+                <strong>Legal disclaimer 2026 – 2055:</strong> 
+                This content, including all associated data, portfolios, and intellectual property, 
+                is the exclusive property of 
+                <span class="calvin-awalt">Calvin Awalt</span>.
+                <span style="display: inline-block; margin-top: 0.3rem;">
+                    All rights are reserved for the period 
+                    <span class="years">2026–2055</span>. 
+                    Any unauthorised use, reproduction, or distribution during this term 
+                    is strictly prohibited and may be pursued to the full extent of the law.
+                </span>
+            </span>
+        </div>
+
         <div class="signature-line">
-            <span>© Calvin · <span style="font-style: italic;">caveat emptor</span></span>
+            <span>© Calvin Awalt · <span style="font-style: italic;">caveat emptor</span></span>
             <span class="calvin-mark">✧  you are on your own  ✧</span>
         </div>
     </div>
