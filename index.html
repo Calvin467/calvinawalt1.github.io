@@ -1,538 +1,205 @@
-A,SBET,VALE,ZIM,MVIS,IFOS,BABA,BNRG, UAMY, HSBC, BYDD, HBR, NVTS, MU, MP, TSM,DRIV,IBB,RAYS,TAN,SPG,PLD,CBRE,GRT-UN.TO,MHC.U,VTR,EQR"></script><div class="macroaxis-copyright"></div><!-- Macroaxis Widget End -->
-      <!-- Ticker Tape Widget -->
-      <div class="tradingview-widget-container">
-         <div class="tradingview-widget-container__widget"></div>
-         <div class="tradingview-w  <main>
-      
-       <!-- Macroaxis Widget Start --><script src="https://www.macroaxis.com/widgets/url.jsp?t=15&s=SRPT, NIO, AA,INDidget-copyright">
-            <a href="https://www.tradingview.com" rel="noopener noreferrer" target="_blank"><span class="blue-text">Ticker Tape</span></a> by TradingView
-         </div>
-         <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-         {
-            "symbols": [
-               {"proName": "FOREXCOM:SPXUSD", "title": "S&P 500"},
-               {"proName": "FOREXCOM:NSXUSD", "title": "Nasdaq 100"},
-               {"proName": "FX_IDC:EURUSD", "title": "EUR/USD"},
-               {"proName": "BITSTAMP:BTCUSD", "title": "BTC/USD"},
-               {"proName": "BITSTAMP:ETHUSD", "title": "ETH/USD"}
-            ],
-            "showSymbolLogo": true,
-            "colorTheme": "dark",
-            "isTransparent": true,
-            "displayMode": "adaptive",
-            "locale": "en"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Futurology Stocks · Calvin Awalt</title>
+   <style>
+      * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+      }
+
+      body {
+         background-color: #0b0e14;
+         font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+         color: #e0e4f0;
+         padding: 1.5rem 1rem;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+      }
+
+      main {
+         max-width: 1400px;
+         width: 100%;
+         margin: 0 auto;
+      }
+
+      /* widget containers */
+      .tradingview-widget-container {
+         margin-bottom: 2rem;
+         border-radius: 16px;
+         overflow: hidden;
+         background: rgba(20, 24, 34, 0.7);
+         backdrop-filter: blur(2px);
+         border: 1px solid #2a2f3a;
+         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+         transition: border-color 0.2s ease;
+      }
+
+      .tradingview-widget-container:hover {
+         border-color: #3f4a5a;
+      }
+
+      .tradingview-widget-copyright {
+         font-size: 0.75rem;
+         text-align: right;
+         padding: 0.4rem 1rem 0.3rem 0;
+         color: #6a7285;
+         background: #0e1118;
+         border-top: 1px solid #21262f;
+      }
+
+      .tradingview-widget-copyright a {
+         color: #5a7a9a;
+         text-decoration: none;
+         transition: color 0.15s;
+      }
+
+      .tradingview-widget-copyright a:hover {
+         color: #8bb3e0;
+      }
+
+      .blue-text {
+         color: #4a8bb9;
+         font-weight: 500;
+      }
+
+      /* macroaxis widget */
+      .macroaxis-wrapper {
+         background: #0e1118;
+         border-radius: 12px;
+         padding: 1rem 1.2rem;
+         margin-bottom: 2rem;
+         border: 1px solid #2a2f3a;
+         box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+         overflow-x: auto;
+      }
+
+      .macroaxis-copyright {
+         font-size: 0.7rem;
+         color: #4f5a6a;
+         text-align: right;
+         margin-top: 0.4rem;
+      }
+
+      /* footer */
+      footer {
+         max-width: 1400px;
+         width: 100%;
+         margin: 2rem auto 0.5rem auto;
+         padding: 1.8rem 1.5rem 1.2rem 1.5rem;
+         border-top: 1px solid #252b36;
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: space-between;
+         align-items: center;
+         color: #7b8598;
+         font-size: 0.9rem;
+      }
+
+      .footer-left p {
+         margin: 0.2rem 0;
+      }
+
+      .footer-left p:first-child {
+         color: #b0bedb;
+         font-weight: 500;
+         letter-spacing: 0.3px;
+      }
+
+      .legal-notice {
+         background: #0d1017;
+         border-left: 3px solid #c9a03d;
+         padding: 1.2rem 1.5rem;
+         border-radius: 0 14px 14px 0;
+         max-width: 700px;
+         margin: 1.8rem auto 0.8rem auto;
+         font-size: 0.85rem;
+         line-height: 1.6;
+         color: #cbd2e3;
+         box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+         border: 1px solid #232a34;
+         border-left-width: 6px;
+         border-left-color: #c9a03d;
+      }
+
+      .legal-notice strong {
+         color: #e6d9b8;
+         font-weight: 600;
+      }
+
+      .calvin-awalt {
+         color: #e3c87c;
+         font-weight: 600;
+         letter-spacing: 0.4px;
+      }
+
+      .years {
+         font-weight: 600;
+         color: #cfb87c;
+         background: #1e1f26;
+         padding: 0.1rem 0.4rem;
+         border-radius: 20px;
+         font-size: 0.8rem;
+      }
+
+      .signature-line {
+         text-align: center;
+         margin: 1.8rem 0 0.5rem 0;
+         font-size: 0.9rem;
+         color: #828fa8;
+         border-top: 1px dashed #2a313e;
+         padding-top: 1.5rem;
+         max-width: 1400px;
+         width: 100%;
+         margin-left: auto;
+         margin-right: auto;
+      }
+
+      .signature-line span {
+         background: #12161f;
+         padding: 0.2rem 1.2rem;
+         border-radius: 40px;
+         border: 1px solid #2e3645;
+      }
+
+      /* Fix for embedded widget spacing */
+      .tradingview-widget-container iframe {
+         display: block;
+         width: 100% !important;
+         border: 0;
+      }
+
+      /* Responsive touches */
+      @media (max-width: 600px) {
+         body {
+            padding: 0.8rem 0.4rem;
          }
-         </script>
-      </div>
-
-      <!-- PLTR Chart Widget -->
-      <div class="tradingview-widget-container">
-         <div id="tradingview_0103c"></div>
-         <div class="tradingview-widget-copyright">
-            <a href="https://www.tradingview.com/symbols/NYSE-PLTR/" rel="noopener noreferrer" target="_blank"><span class="blue-text">PLTR Chart</span></a> by TradingView
-         </div>
-         <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-         <script type="text/javascript">
-            new TradingView.MediumWidget({
-               "symbols": [["NASDAQ:GOOG|ALL"], ["NASDAQ:NVDA|ALL"], ["NASDAQ:AMD|ALL"], ["NASDAQ:IRBT|ALL"], ["TSXV:QUIS|ALL"], ["TSXV:MCLD|ALL"], ["TSXV:NXO|ALL"], ["TSXV:SPOT|ALL"], ["AMEX:ARKW|ALL"], ["TSXV:BITF|ALL"]],
-               "chartOnly": false,
-               "width": "100%",
-               "height": "450",
-               "locale": "en",
-               "colorTheme": "dark",
-               "gridLineColor": "rgba(66, 66, 66, 1)",
-               "trendLineColor": "rgba(0, 0, 255, 1)",
-               "fontColor": "rgba(255, 0, 255, 1)",
-               "underLineColor": "rgba(0, 0, 255, 0.15)",
-               "isTransparent": true,
-               "autosize": false,
-               "container_id": "tradingview_0103c"
-            });
-         </script>
-      </div>
-
-      <!-- VEOEY Chart Widget -->
-      <div class="tradingview-widget-container">
-         <div id="tradingview_f9866"></div>
-         <div class="tradingview-widget-copyright">
-            <a href="https://www.tradingview.com/symbols/OTC-VEOEY/" rel="noopener noreferrer" target="_blank"><span class="blue-text">VEOEY Chart</span></a> by TradingView
-         </div>
-         <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-         <script type="text/javascript">
-            new TradingView.MediumWidget({
-               "symbols": [["OTC:VEOEY|ALL"], ["NYSE:PNR|ALL"], ["NASDAQ:YORW|ALL"], ["NYSE:CWT|ALL"], ["NYSE:AWR|ALL"], ["NYSE:WTRG|ALL"], ["TSX:GWR|ALL"], ["OTC:RAKR|ALL"]],
-               "chartOnly": false,
-               "width": "100%",
-               "height": "450",
-               "locale": "en",
-               "colorTheme": "dark",
-               "gridLineColor": "rgba(66, 66, 66, 1)",
-               "trendLineColor": "rgba(0, 0, 255, 1)",
-               "fontColor": "rgba(255, 0, 255, 1)",
-               "underLineColor": "rgba(0, 0, 255, 0.15)",
-               "isTransparent": true,
-               "autosize": false,
-               "container_id": "tradingview_f9866"
-            });
-         </script>
-      </div>
-
-      <!-- TRC Chart Widget -->
-      <div class="tradingview-widget-container">
-         <div id="tradingview_670f1"></div>
-         <div class="tradingview-widget-copyright">
-            <a href="https://www.tradingview.com/symbols/NYSE-TRC/" rel="noopener noreferrer" target="_blank"><span class="blue-text">TRC Chart</span></a> by TradingView
-         </div>
-         <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-         <script type="text/javascript">
-            new TradingView.MediumWidget({
-               "symbols": [["NYSE:TRC|ALL"], ["NASDAQ:CRESY|ALL"], ["NASDAQ:PICO|ALL"], ["NASDAQ:LAND|ALL"]],
-               "chartOnly": false,
-               "width": "100%",
-               "height": "450",
-               "locale": "en",
-               "colorTheme": "dark",
-               "gridLineColor": "rgba(66, 66, 66, 1)",
-               "trendLineColor": "rgba(0, 0, 255, 1)",
-               "fontColor": "rgba(255, 0, 255, 1)",
-               "underLineColor": "rgba(0, 0, 255, 0.15)",
-               "isTransparent": true,
-               "autosize": false,
-               "container_id": "tradingview_670f1"
-            });
-         </script>
-      </div>
-
-      <!-- SLV Chart Widget -->
-      <div class="tradingview-widget-container">
-         <div id="tradingview_c77df"></div>
-         <div class="tradingview-widget-copyright">
-            <a href="https://www.tradingview.com/symbols/AMEX-SLV/" rel="noopener noreferrer" target="_blank"><span class="blue-text">SLV Chart</span></a> by TradingView
-         </div>
-         <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-         <script type="text/javascript">
-            new TradingView.MediumWidget({
-               "symbols": [["AMEX:SLV|ALL"], ["NYSE:GOLD|ALL"], ["AMEX:BATT|ALL"], ["TSXV:NOU|ALL"], ["AMEX:JJN|ALL"], ["COPPER|ALL"], ["CBOT:ZCZ2024|ALL"], ["AMEX:URA|ALL"]],
-               "chartOnly": false,
-               "width": "100%",
-               "height": "450",
-               "locale": "en",
-               "colorTheme": "dark",
-               "gridLineColor": "rgba(66, 66, 66, 1)",
-               "trendLineColor": "rgba(0, 0, 255, 1)",
-               "fontColor": "rgba(255, 0, 255, 1)",
-               "underLineColor": "rgba(0, 0, 255, 0.15)",
-               "isTransparent": true,
-               "autosize": false,
-               "container_id": "tradingview_c77df"
-            });
-         </script>
-      </div>
-
-      <!-- TSLA Chart Widget -->
-      <div class="tradingview-widget-container">
-         <div id="tradingview_c825c"></div>
-         <div class="tradingview-widget-copyright">
-            <a href="https://www.tradingview.com/symbols/NASDAQ-TSLA/" rel="noopener noreferrer" target="_blank"><span class="blue-text">TSLA Chart</span></a> by TradingView
-         </div>
-         <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-         <script type="text/javascript">
-            new TradingView.MediumWidget({
-               "symbols": [["NASDAQ:TSLA|ALL"], ["NYSE:NIO|ALL"], ["NASDAQ:SOLO|ALL"], ["NYSE:XPEV|ALL"], ["NASDAQ:LI|ALL"], ["TSXV:GPV|ALL"], ["WKHS|ALL"], ["NASDAQ:PLUG|ALL"]],
-               "chartOnly": false,
-               "width": "100%",
-               "height": "450",
-               "locale": "en",
-               "colorTheme": "dark",
-               "gridLineColor": "rgba(66, 66, 66, 1)",
-               "trendLineColor": "rgba(0, 0, 255, 1)",
-               "fontColor": "rgba(255, 0, 255, 1)",
-               "underLineColor": "rgba(0, 0, 255, 0.15)",
-               "isTransparent": true,
-               "autosize": false,
-               "container_id": "tradingview_c825c"
-            });
-         </script>
-      </div>
-
-      <!-- MAXR Chart Widget -->
-      <div class="tradingview-widget-container">
-         <div id="tradingview_33995"></div>
-         <div class="tradingview-widget-copyright">
-            <a href="https://www.tradingview.com/symbols/NYSE-MAXR/" rel="noopener noreferrer" target="_blank"><span class="blue-text">MAXR Chart</span></a> by TradingView
-         </div>
-         <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-         <script type="text/javascript">
-            new TradingView.MediumWidget({
-               "symbols": [["NYSE:MAXR|ALL"], ["NYSE:SPCE|ALL"], ["NYSE:LMT|ALL"], ["NYSE:BA|ALL"], ["NYSE:NOC|ALL"], ["OTC:INTEQ|ALL"], ["NASDAQ:UFO|ALL"], ["NASDAQ:LORL|ALL"]],
-               "chartOnly": false,
-               "width": "100%",
-               "height": "450",
-               "locale": "en",
-               "colorTheme": "dark",
-               "gridLineColor": "rgba(66, 66, 66, 1)",
-               "trendLineColor": "rgba(0, 0, 255, 1)",
-               "fontColor": "rgba(255, 0, 255, 1)",
-               "underLineColor": "rgba(0, 0, 255, 0.15)",
-               "isTransparent": true,
-               "autosize": false,
-               "container_id": "tradingview_33995"
-            });
-         </script>
-      </div>
-
-      <!-- FSLR Chart Widget -->
-      <div class="tradingview-widget-container">
-         <div id="tradingview_9216c"></div>
-         <div class="tradingview-widget-copyright">
-            <a href="https://www.tradingview.com/symbols/NASDAQ-FSLR/" rel="noopener noreferrer" target="_blank"><span class="blue-text">FSLR Chart</span></a> by TradingView
-         </div>
-         <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-         <script type="text/javascript">
-            new TradingView.MediumWidget({
-               "symbols": [["NASDAQ:FSLR|ALL"], ["NASDAQ:SPWR|ALL"], ["NASDAQ:ENPH|ALL"], ["NASDAQ:SEDG|ALL"], ["TSXV:SOLR|ALL"], ["NASDAQ:CSIQ|ALL"], ["TSXV:NGY|ALL"], ["NASDAQ:ARRY|ALL"]],
-               "chartOnly": false,
-               "width": "100%",
-               "height": "450",
-               "locale": "en",
-               "colorTheme": "dark",
-               "gridLineColor": "rgba(66, 66, 66, 1)",
-               "trendLineColor": "rgba(0, 0, 255, 1)",
-               "fontColor": "rgba(255, 0, 255, 1)",
-               "underLineColor": "rgba(0, 0, 255, 0.15)",
-               "isTransparent": true,
-               "autosize": false,
-               "container_id": "tradingview_9216c"
-            });
-         </script>
-      </div>
-
-      <!-- DAN Chart Widget -->
-      <div class="tradingview-widget-container">
-         <div id="tradingview_faa65"></div>
-         <div class="tradingview-widget-copyright">
-            <a href="https://www.tradingview.com/symbols/TSXV-DAN/" rel="noopener noreferrer" target="_blank"><span class="blue-text">DAN Chart</span></a> by TradingView
-         </div>
-         <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-         <script type="text/javascript">
-            new TradingView.MediumWidget({
-               "symbols": [["TSXV:DAN|ALL"], ["ASX:AEV|ALL"], ["TSXV:GRO|ALL"], ["TSXV:IFOS|ALL"], ["NYSE:MOS|ALL"], ["NYSE:NTR|ALL"]],
-               "chartOnly": false,
-               "width": "100%",
-               "height": "450",
-               "locale": "en",
-               "colorTheme": "dark",
-               "gridLineColor": "rgba(66, 66, 66, 1)",
-               "trendLineColor": "rgba(0, 0, 255, 1)",
-               "fontColor": "rgba(255, 0, 255, 1)",
-               "underLineColor": "rgba(0, 0, 255, 0.15)",
-               "isTransparent": true,
-               "autosize": false,
-               "container_id": "tradingview_faa65"
-            });
-         </script>
-      </div>
-
-      <!-- Cryptocurrency Markets Widget -->
-      <div class="tradingview-widget-container">
-         <div class="tradingview-widget-container__widget"></div>
-         <div class="tradingview-widget-copyright">
-            <a href="https://www.tradingview.com/markets/cryptocurrencies/prices-all/" rel="noopener noreferrer" target="_blank"><span class="blue-text">Cryptocurrency Markets</span></a> by TradingView
-         </div>
-         <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
-         {
-            "width": "100%",
-            "height": "450",
-            "defaultColumn": "overview",
-            "screener_type": "crypto_mkt",
-            "displayCurrency": "USD",
-            "colorTheme": "dark",
-            "locale": "en",
-            "isTransparent": true
+         .tradingview-widget-container {
+            border-radius: 10px;
+            margin-bottom: 1.2rem;
          }
-   <main>
-      
-       <!-- Macroaxis Widget Start --><script src="https://www.macroaxis.com/widgets/url.jsp?t=15&s=SRPT, NIO, AA,INDA,SBET,VALE,ZIM,MVIS,IFOS,BABA,BNRG, UAMY, HSBC, BYDD, HBR, NVTS, MU, MP, TSM,DRIV,IBB,RAYS,TAN,SPG,PLD,CBRE,GRT-UN.TO,MHC.U,VTR,EQR"></script><div class="macroaxis-copyright"></div><!-- Macroaxis Widget End -->
-      <!-- Ticker Tape Widget -->
-      <div class="tradingview-widget-container">
-         <div class="tradingview-widget-container__widget"></div>
-         <div class="tradingview-widget-copyright">
-            <a href="https://www.tradingview.com" rel="noopener noreferrer" target="_blank"><span class="blue-text">Ticker Tape</span></a> by TradingView
-         </div>
-         <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-         {
-            "symbols": [
-               {"proName": "FOREXCOM:SPXUSD", "title": "S&P 500"},
-               {"proName": "FOREXCOM:NSXUSD", "title": "Nasdaq 100"},
-               {"proName": "FX_IDC:EURUSD", "title": "EUR/USD"},
-               {"proName": "BITSTAMP:BTCUSD", "title": "BTC/USD"},
-               {"proName": "BITSTAMP:ETHUSD", "title": "ETH/USD"}
-            ],
-            "showSymbolLogo": true,
-            "colorTheme": "dark",
-            "isTransparent": true,
-            "displayMode": "adaptive",
-            "locale": "en"
+         footer {
+            flex-direction: column;
+            gap: 0.6rem;
+            text-align: center;
          }
-         </script>
-      </div>
-
-      <!-- PLTR Chart Widget -->
-      <div class="tradingview-widget-container">
-         <div id="tradingview_0103c"></div>
-         <div class="tradingview-widget-copyright">
-            <a href="https://www.tradingview.com/symbols/NYSE-PLTR/" rel="noopener noreferrer" target="_blank"><span class="blue-text">PLTR Chart</span></a> by TradingView
-         </div>
-         <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-         <script type="text/javascript">
-            new TradingView.MediumWidget({
-               "symbols": [["NASDAQ:GOOG|ALL"], ["NASDAQ:NVDA|ALL"], ["NASDAQ:AMD|ALL"], ["NASDAQ:IRBT|ALL"], ["TSXV:QUIS|ALL"], ["TSXV:MCLD|ALL"], ["TSXV:NXO|ALL"], ["TSXV:SPOT|ALL"], ["AMEX:ARKW|ALL"], ["TSXV:BITF|ALL"]],
-               "chartOnly": false,
-               "width": "100%",
-               "height": "450",
-               "locale": "en",
-               "colorTheme": "dark",
-               "gridLineColor": "rgba(66, 66, 66, 1)",
-               "trendLineColor": "rgba(0, 0, 255, 1)",
-               "fontColor": "rgba(255, 0, 255, 1)",
-               "underLineColor": "rgba(0, 0, 255, 0.15)",
-               "isTransparent": true,
-               "autosize": false,
-               "container_id": "tradingview_0103c"
-            });
-         </script>
-      </div>
-
-      <!-- VEOEY Chart Widget -->
-      <div class="tradingview-widget-container">
-         <div id="tradingview_f9866"></div>
-         <div class="tradingview-widget-copyright">
-            <a href="https://www.tradingview.com/symbols/OTC-VEOEY/" rel="noopener noreferrer" target="_blank"><span class="blue-text">VEOEY Chart</span></a> by TradingView
-         </div>
-         <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-         <script type="text/javascript">
-            new TradingView.MediumWidget({
-               "symbols": [["OTC:VEOEY|ALL"], ["NYSE:PNR|ALL"], ["NASDAQ:YORW|ALL"], ["NYSE:CWT|ALL"], ["NYSE:AWR|ALL"], ["NYSE:WTRG|ALL"], ["TSX:GWR|ALL"], ["OTC:RAKR|ALL"]],
-               "chartOnly": false,
-               "width": "100%",
-               "height": "450",
-               "locale": "en",
-               "colorTheme": "dark",
-               "gridLineColor": "rgba(66, 66, 66, 1)",
-               "trendLineColor": "rgba(0, 0, 255, 1)",
-               "fontColor": "rgba(255, 0, 255, 1)",
-               "underLineColor": "rgba(0, 0, 255, 0.15)",
-               "isTransparent": true,
-               "autosize": false,
-               "container_id": "tradingview_f9866"
-            });
-         </script>
-      </div>
-
-      <!-- TRC Chart Widget -->
-      <div class="tradingview-widget-container">
-         <div id="tradingview_670f1"></div>
-         <div class="tradingview-widget-copyright">
-            <a href="https://www.tradingview.com/symbols/NYSE-TRC/" rel="noopener noreferrer" target="_blank"><span class="blue-text">TRC Chart</span></a> by TradingView
-         </div>
-         <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-         <script type="text/javascript">
-            new TradingView.MediumWidget({
-               "symbols": [["NYSE:TRC|ALL"], ["NASDAQ:CRESY|ALL"], ["NASDAQ:PICO|ALL"], ["NASDAQ:LAND|ALL"]],
-               "chartOnly": false,
-               "width": "100%",
-               "height": "450",
-               "locale": "en",
-               "colorTheme": "dark",
-               "gridLineColor": "rgba(66, 66, 66, 1)",
-               "trendLineColor": "rgba(0, 0, 255, 1)",
-               "fontColor": "rgba(255, 0, 255, 1)",
-               "underLineColor": "rgba(0, 0, 255, 0.15)",
-               "isTransparent": true,
-               "autosize": false,
-               "container_id": "tradingview_670f1"
-            });
-         </script>
-      </div>
-
-      <!-- SLV Chart Widget -->
-      <div class="tradingview-widget-container">
-         <div id="tradingview_c77df"></div>
-         <div class="tradingview-widget-copyright">
-            <a href="https://www.tradingview.com/symbols/AMEX-SLV/" rel="noopener noreferrer" target="_blank"><span class="blue-text">SLV Chart</span></a> by TradingView
-         </div>
-         <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-         <script type="text/javascript">
-            new TradingView.MediumWidget({
-               "symbols": [["AMEX:SLV|ALL"], ["NYSE:GOLD|ALL"], ["AMEX:BATT|ALL"], ["TSXV:NOU|ALL"], ["AMEX:JJN|ALL"], ["COPPER|ALL"], ["CBOT:ZCZ2024|ALL"], ["AMEX:URA|ALL"]],
-               "chartOnly": false,
-               "width": "100%",
-               "height": "450",
-               "locale": "en",
-               "colorTheme": "dark",
-               "gridLineColor": "rgba(66, 66, 66, 1)",
-               "trendLineColor": "rgba(0, 0, 255, 1)",
-               "fontColor": "rgba(255, 0, 255, 1)",
-               "underLineColor": "rgba(0, 0, 255, 0.15)",
-               "isTransparent": true,
-               "autosize": false,
-               "container_id": "tradingview_c77df"
-            });
-         </script>
-      </div>
-
-      <!-- TSLA Chart Widget -->
-      <div class="tradingview-widget-container">
-         <div id="tradingview_c825c"></div>
-         <div class="tradingview-widget-copyright">
-            <a href="https://www.tradingview.com/symbols/NASDAQ-TSLA/" rel="noopener noreferrer" target="_blank"><span class="blue-text">TSLA Chart</span></a> by TradingView
-         </div>
-         <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-         <script type="text/javascript">
-            new TradingView.MediumWidget({
-               "symbols": [["NASDAQ:TSLA|ALL"], ["NYSE:NIO|ALL"], ["NASDAQ:SOLO|ALL"], ["NYSE:XPEV|ALL"], ["NASDAQ:LI|ALL"], ["TSXV:GPV|ALL"], ["WKHS|ALL"], ["NASDAQ:PLUG|ALL"]],
-               "chartOnly": false,
-               "width": "100%",
-               "height": "450",
-               "locale": "en",
-               "colorTheme": "dark",
-               "gridLineColor": "rgba(66, 66, 66, 1)",
-               "trendLineColor": "rgba(0, 0, 255, 1)",
-               "fontColor": "rgba(255, 0, 255, 1)",
-               "underLineColor": "rgba(0, 0, 255, 0.15)",
-               "isTransparent": true,
-               "autosize": false,
-               "container_id": "tradingview_c825c"
-            });
-         </script>
-      </div>
-
-      <!-- MAXR Chart Widget -->
-      <div class="tradingview-widget-container">
-         <div id="tradingview_33995"></div>
-         <div class="tradingview-widget-copyright">
-            <a href="https://www.tradingview.com/symbols/NYSE-MAXR/" rel="noopener noreferrer" target="_blank"><span class="blue-text">MAXR Chart</span></a> by TradingView
-         </div>
-         <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-         <script type="text/javascript">
-            new TradingView.MediumWidget({
-               "symbols": [["NYSE:MAXR|ALL"], ["NYSE:SPCE|ALL"], ["NYSE:LMT|ALL"], ["NYSE:BA|ALL"], ["NYSE:NOC|ALL"], ["OTC:INTEQ|ALL"], ["NASDAQ:UFO|ALL"], ["NASDAQ:LORL|ALL"]],
-               "chartOnly": false,
-               "width": "100%",
-               "height": "450",
-               "locale": "en",
-               "colorTheme": "dark",
-               "gridLineColor": "rgba(66, 66, 66, 1)",
-               "trendLineColor": "rgba(0, 0, 255, 1)",
-               "fontColor": "rgba(255, 0, 255, 1)",
-               "underLineColor": "rgba(0, 0, 255, 0.15)",
-               "isTransparent": true,
-               "autosize": false,
-               "container_id": "tradingview_33995"
-            });
-         </script>
-      </div>
-
-      <!-- FSLR Chart Widget -->
-      <div class="tradingview-widget-container">
-         <div id="tradingview_9216c"></div>
-         <div class="tradingview-widget-copyright">
-            <a href="https://www.tradingview.com/symbols/NASDAQ-FSLR/" rel="noopener noreferrer" target="_blank"><span class="blue-text">FSLR Chart</span></a> by TradingView
-         </div>
-         <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-         <script type="text/javascript">
-            new TradingView.MediumWidget({
-               "symbols": [["NASDAQ:FSLR|ALL"], ["NASDAQ:SPWR|ALL"], ["NASDAQ:ENPH|ALL"], ["NASDAQ:SEDG|ALL"], ["TSXV:SOLR|ALL"], ["NASDAQ:CSIQ|ALL"], ["TSXV:NGY|ALL"], ["NASDAQ:ARRY|ALL"]],
-               "chartOnly": false,
-               "width": "100%",
-               "height": "450",
-               "locale": "en",
-               "colorTheme": "dark",
-               "gridLineColor": "rgba(66, 66, 66, 1)",
-               "trendLineColor": "rgba(0, 0, 255, 1)",
-               "fontColor": "rgba(255, 0, 255, 1)",
-               "underLineColor": "rgba(0, 0, 255, 0.15)",
-               "isTransparent": true,
-               "autosize": false,
-               "container_id": "tradingview_9216c"
-            });
-         </script>
-      </div>
-
-      <!-- DAN Chart Widget -->
-      <div class="tradingview-widget-container">
-         <div id="tradingview_faa65"></div>
-         <div class="tradingview-widget-copyright">
-            <a href="https://www.tradingview.com/symbols/TSXV-DAN/" rel="noopener noreferrer" target="_blank"><span class="blue-text">DAN Chart</span></a> by TradingView
-         </div>
-         <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-         <script type="text/javascript">
-            new TradingView.MediumWidget({
-               "symbols": [["TSXV:DAN|ALL"], ["ASX:AEV|ALL"], ["TSXV:GRO|ALL"], ["TSXV:IFOS|ALL"], ["NYSE:MOS|ALL"], ["NYSE:NTR|ALL"]],
-               "chartOnly": false,
-               "width": "100%",
-               "height": "450",
-               "locale": "en",
-               "colorTheme": "dark",
-               "gridLineColor": "rgba(66, 66, 66, 1)",
-               "trendLineColor": "rgba(0, 0, 255, 1)",
-               "fontColor": "rgba(255, 0, 255, 1)",
-               "underLineColor": "rgba(0, 0, 255, 0.15)",
-               "isTransparent": true,
-               "autosize": false,
-               "container_id": "tradingview_faa65"
-            });
-         </script>
-      </div>
-
-      <!-- Cryptocurrency Markets Widget -->
-      <div class="tradingview-widget-container">
-         <div class="tradingview-widget-container__widget"></div>
-         <div class="tradingview-widget-copyright">
-            <a href="https://www.tradingview.com/markets/cryptocurrencies/prices-all/" rel="noopener noreferrer" target="_blank"><span class="blue-text">Cryptocurrency Markets</span></a> by TradingView
-         </div>
-         <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
-         {
-            "width": "100%",
-            "height": "450",
-            "defaultColumn": "overview",
-            "screener_type": "crypto_mkt",
-            "displayCurrency": "USD",
-            "colorTheme": "dark",
-            "locale": "en",
-            "isTransparent": true
-         }
-         </script>
-      </div>
-   </main>
-
-   <!-- Footer -->
-   <footer>
-      <p>Copyright &copy; 2026 Futurology Stocks</p>
-      <p>Financial Content By Macroaxis</p>
-   </footer>
-
-  
-</body>
-</html>
-</script>
-      </div>
-   </main>
-
-   <!-- Footer -->
-   <footer>
-      <p>Copyright &copy; 2026 Futurology Stocks</p>
-      <p>Financial Content By Macroaxis</p>
-   </footer>
-
-  
-</body>
-</html>
+      }
+   </style>
+</head>
+<body>
 
    <main>
-      
-       <!-- Macroaxis Widget Start --><script src="https://www.macroaxis.com/widgets/url.jsp?t=15&s=SRPT, NIO, AA,INDA,SBET,VALE,ZIM,MVIS,IFOS,BABA,BNRG, UAMY, HSBC, BYDD, HBR, NVTS, MU, MP, TSM,DRIV,IBB,RAYS,TAN,SPG,PLD,CBRE,GRT-UN.TO,MHC.U,VTR,EQR"></script><div class="macroaxis-copyright"></div><!-- Macroaxis Widget End -->
-      <!-- Ticker Tape Widget -->
+      <!-- ========== MACROAXIS WIDGET ========== -->
+      <div class="macroaxis-wrapper">
+         <script src="https://www.macroaxis.com/widgets/url.jsp?t=15&s=SRPT,NIO,AA,INDA,SBET,VALE,ZIM,MVIS,IFOS,BABA,BNRG,UAMY,HSBC,BYDD,HBR,NVTS,MU,MP,TSM,DRIV,IBB,RAYS,TAN,SPG,PLD,CBRE,GRT-UN.TO,MHC.U,VTR,EQR"></script>
+         <div class="macroaxis-copyright"></div>
+      </div>
+
+      <!-- ========== TICKER TAPE ========== -->
       <div class="tradingview-widget-container">
          <div class="tradingview-widget-container__widget"></div>
          <div class="tradingview-widget-copyright">
@@ -556,7 +223,7 @@ A,SBET,VALE,ZIM,MVIS,IFOS,BABA,BNRG, UAMY, HSBC, BYDD, HBR, NVTS, MU, MP, TSM,DR
          </script>
       </div>
 
-      <!-- PLTR Chart Widget -->
+      <!-- ========== PLTR / TECH WIDGET ========== -->
       <div class="tradingview-widget-container">
          <div id="tradingview_0103c"></div>
          <div class="tradingview-widget-copyright">
@@ -582,7 +249,7 @@ A,SBET,VALE,ZIM,MVIS,IFOS,BABA,BNRG, UAMY, HSBC, BYDD, HBR, NVTS, MU, MP, TSM,DR
          </script>
       </div>
 
-      <!-- VEOEY Chart Widget -->
+      <!-- ========== VEOEY / WATER WIDGET ========== -->
       <div class="tradingview-widget-container">
          <div id="tradingview_f9866"></div>
          <div class="tradingview-widget-copyright">
@@ -608,7 +275,7 @@ A,SBET,VALE,ZIM,MVIS,IFOS,BABA,BNRG, UAMY, HSBC, BYDD, HBR, NVTS, MU, MP, TSM,DR
          </script>
       </div>
 
-      <!-- TRC Chart Widget -->
+      <!-- ========== TRC / REIT WIDGET ========== -->
       <div class="tradingview-widget-container">
          <div id="tradingview_670f1"></div>
          <div class="tradingview-widget-copyright">
@@ -634,7 +301,7 @@ A,SBET,VALE,ZIM,MVIS,IFOS,BABA,BNRG, UAMY, HSBC, BYDD, HBR, NVTS, MU, MP, TSM,DR
          </script>
       </div>
 
-      <!-- SLV Chart Widget -->
+      <!-- ========== SLV / COMMODITIES WIDGET ========== -->
       <div class="tradingview-widget-container">
          <div id="tradingview_c77df"></div>
          <div class="tradingview-widget-copyright">
@@ -660,7 +327,7 @@ A,SBET,VALE,ZIM,MVIS,IFOS,BABA,BNRG, UAMY, HSBC, BYDD, HBR, NVTS, MU, MP, TSM,DR
          </script>
       </div>
 
-      <!-- TSLA Chart Widget -->
+      <!-- ========== TSLA / EV WIDGET ========== -->
       <div class="tradingview-widget-container">
          <div id="tradingview_c825c"></div>
          <div class="tradingview-widget-copyright">
@@ -686,7 +353,7 @@ A,SBET,VALE,ZIM,MVIS,IFOS,BABA,BNRG, UAMY, HSBC, BYDD, HBR, NVTS, MU, MP, TSM,DR
          </script>
       </div>
 
-      <!-- MAXR Chart Widget -->
+      <!-- ========== MAXR / SPACE WIDGET ========== -->
       <div class="tradingview-widget-container">
          <div id="tradingview_33995"></div>
          <div class="tradingview-widget-copyright">
@@ -712,7 +379,7 @@ A,SBET,VALE,ZIM,MVIS,IFOS,BABA,BNRG, UAMY, HSBC, BYDD, HBR, NVTS, MU, MP, TSM,DR
          </script>
       </div>
 
-      <!-- FSLR Chart Widget -->
+      <!-- ========== FSLR / SOLAR WIDGET ========== -->
       <div class="tradingview-widget-container">
          <div id="tradingview_9216c"></div>
          <div class="tradingview-widget-copyright">
@@ -738,7 +405,7 @@ A,SBET,VALE,ZIM,MVIS,IFOS,BABA,BNRG, UAMY, HSBC, BYDD, HBR, NVTS, MU, MP, TSM,DR
          </script>
       </div>
 
-      <!-- DAN Chart Widget -->
+      <!-- ========== DAN / AGRICULTURE WIDGET ========== -->
       <div class="tradingview-widget-container">
          <div id="tradingview_faa65"></div>
          <div class="tradingview-widget-copyright">
@@ -764,7 +431,7 @@ A,SBET,VALE,ZIM,MVIS,IFOS,BABA,BNRG, UAMY, HSBC, BYDD, HBR, NVTS, MU, MP, TSM,DR
          </script>
       </div>
 
-      <!-- Cryptocurrency Markets Widget -->
+      <!-- ========== CRYPTOCURRENCY MARKETS ========== -->
       <div class="tradingview-widget-container">
          <div class="tradingview-widget-container__widget"></div>
          <div class="tradingview-widget-copyright">
@@ -783,35 +450,36 @@ A,SBET,VALE,ZIM,MVIS,IFOS,BABA,BNRG, UAMY, HSBC, BYDD, HBR, NVTS, MU, MP, TSM,DR
          }
          </script>
       </div>
+
+      <!-- ========== LEGAL NOTICE ========== -->
+      <div class="legal-notice">
+         <strong>Legal disclaimer 2026 – 2055:</strong>
+         This content, including all associated data, portfolios, and intellectual property,
+         is the exclusive property of
+         <span class="calvin-awalt">Calvin Awalt</span>.
+         <span style="display: inline-block; margin-top: 0.3rem;">
+            All rights are reserved for the period
+            <span class="years">2026–2055</span>.
+            Any unauthorised use, reproduction, or distribution during this term
+            is strictly prohibited and may be pursued to the full extent of the law.
+         </span>
+      </div>
+
+      <div class="signature-line">
+         <span>© Calvin Awalt · <span style="font-style: italic;"></span></span>
+      </div>
    </main>
 
-   <!-- Footer -->
+   <!-- ========== FOOTER ========== -->
    <footer>
-      <p>Copyright &copy; 2026 Future Stocks</p>
-      <p>Financial Content By Macroaxis</p>
+      <div class="footer-left">
+         <p>Copyright &copy; 2026 Futurology Stocks</p>
+         <p>Financial Content By Macroaxis</p>
+      </div>
+      <div class="footer-right" style="opacity:0.6; font-size:0.8rem;">
+         <span>All widgets provided by TradingView</span>
+      </div>
    </footer>
 
-  
-</body>
-</html>
-
-                <strong>Legal disclaimer 2026 – 2055:</strong> 
-                This content, including all associated data, portfolios, and intellectual property, 
-                is the exclusive property of 
-                <span class="calvin-awalt">Calvin Awalt</span>.
-                <span style="display: inline-block; margin-top: 0.3rem;">
-                    All rights are reserved for the period 
-                    <span class="years">2026–2055</span>. 
-                    Any unauthorised use, reproduction, or distribution during this term 
-                    is strictly prohibited and may be pursued to the full extent of the law.
-                </span>
-            </span>
-        </div>
-
-        <div class="signature-line">
-            <span>© Calvin Awalt · <span style="font-style: italic;"></span></span>
-            <span class="calvin-mark">✧    ✧</span>
-        </div>
-    </div>
 </body>
 </html>
